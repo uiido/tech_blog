@@ -5,6 +5,7 @@ const sequelize = require('../config/config');
 // Superclass
 class Post extends Model { }
 
+// Sets variables for the database to fill in
 Post.init(
     {
         id: {
