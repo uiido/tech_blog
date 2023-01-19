@@ -24,10 +24,12 @@ router.get('/', (req, res) => {
         }
         ]
     })
+        // Returns posts if logged in
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('homepage', { posts, loggedIn: req.session.loggedIn });
         })
+        // Returns error
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -73,6 +75,8 @@ router.get('/post/:id', (req, res) => {
         }
         ]
     })
+        // Returns posts if logged in
+        // Returns error message if no id was found
         .then(dbPostData => {
             if (!dbPostData) {
                 res.status(404).json({ message: 'Sorry, no posts with this ID were found!' });
@@ -82,6 +86,7 @@ router.get('/post/:id', (req, res) => {
             console.log(post);
             res.render('single-post', { post, loggedIn: req.session.loggedIn });
         })
+        // Returns error
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -113,6 +118,8 @@ router.get('/posts-comments', (req, res) => {
         }
         ]
     })
+        // Returns comments on posts
+        // Returns error if no id found
         .then(dbPostData => {
             if (!dbPostData) {
                 res.status(404).json({ message: 'Sorry, no posts with this ID were found!' });
@@ -122,6 +129,7 @@ router.get('/posts-comments', (req, res) => {
 
             res.render('posts-comments', { post, loggedIn: req.session.loggedIn });
         })
+        // Returns error
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
