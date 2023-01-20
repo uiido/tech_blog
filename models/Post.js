@@ -1,11 +1,8 @@
-// Requires
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Superclass
 class Post extends Model { }
 
-// Sets variables for the database to fill in
 Post.init(
     {
         id: {
@@ -15,20 +12,21 @@ Post.init(
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        post_content: {
-            type: DataTypes.STRING,
+        content: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
-                key: 'id'
-            }
-        }
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
@@ -38,5 +36,4 @@ Post.init(
     }
 );
 
-// Exports
 module.exports = Post;

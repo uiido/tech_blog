@@ -1,33 +1,22 @@
 {
-    "name": "techblog",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js",
-        "seed": "node seeds/index.js",
-        "watch": "nodemon server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jakekelly44/tech-blog/issues"
-    },
-    "homepage": "https://github.com/jakekelly44/tech-blog#readme",
-    "dependencies": {
-        "bcrypt": "^5.0.0",
-        "connect-session-sequelize": "^6.1.1",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "express-handlebars": "^4.0.4",
-        "express-session": "^1.17.1",
-        "mysql2": "^2.1.0",
-        "sequelize": "^5.21.12"
-    },
-    "devDependencies": {
-        "jest": "^26.4.2",
-        "nodemon": "^2.0.4"
-    }
+  "name": "tech_blog",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "setup": "npm i && npm run copy:env && npm run sync && npm run seed",
+    "start": "node server",
+    "sync": "node db/sync",
+    "seed": "node seeds/seed",
+    "watch": "nodemon server"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  }
 }

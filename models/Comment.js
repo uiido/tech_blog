@@ -1,11 +1,8 @@
-// Require
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Superclass
 class Comment extends Model { }
 
-// Sets variables for the database to fill in
 Comment.init(
     {
         id: {
@@ -43,5 +40,4 @@ Comment.init(
     }
 );
 
-// Module export
 module.exports = Comment;
