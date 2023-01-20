@@ -1,6 +1,6 @@
 // Require
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection');
 
 // Superclass
 class Comment extends Model { }
