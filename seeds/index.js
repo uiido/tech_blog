@@ -7,6 +7,7 @@ const seedDb = async () => {
     await sequelize.sync({ force: true });
     await userSeeds();
     await postSeeds();
+    process.exit(0);
 };
 
 seedDb();
