@@ -5,9 +5,9 @@ const postRoutes = require('./post-routes');
 const commentRoutes = require('./comment-routes');
 
 // Use API routes
-router.use('/users', userRoutes);
-router.use('/posts', postRoutes);
-router.use('/comments', commentRoutes);
+router.use('/user', userRoutes);
+router.use('/post', postRoutes);
+router.use('/comment', commentRoutes);
 
 // Router
 module.exports = router;
