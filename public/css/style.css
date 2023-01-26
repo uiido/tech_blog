@@ -57,6 +57,11 @@ nav a {
     text-align: center;
 }
 
+nav a:hover {
+    color: var(--light);
+    text-decoration: none;
+}
+
 .body {
     flex: 4;
     background-color: #fff;
