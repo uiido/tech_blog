@@ -1,6 +1,8 @@
 <section>
 
     <h2>Your Posts</h2>
-    {{!-- Your posts go here --}}
+    {{#each posts as |post|}}
+    {{> posts-info post}}
+    {{/each}}
 
 </section>
