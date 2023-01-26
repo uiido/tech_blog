@@ -15,7 +15,7 @@
   </header>
   <nav>
     <a href="/">Home</a>
-    <a href="/">Dashboard</a>
+    <a href="/dashboard">Dashboard</a>
     {{#if loggedIn}}
     <button id="logout-link" class="btn-no-style">Logout</button>
     {{else}}
@@ -23,13 +23,9 @@
     {{/if}}
   </nav>
   <main>
-    <div class="gallery">
+    <div class="body">
       {{{body}}}
     </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>

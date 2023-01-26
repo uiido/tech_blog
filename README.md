@@ -1,4 +1,4 @@
-# Express Urgent Care
+# Tech Blog
 
 ## Table of Contents
 - [Description](#description)

@@ -24,10 +24,6 @@ a {
     text-decoration: none;
 }
 
-a:visited {
-    color: inherit;
-}
-
 header {
     padding: 40px;
     text-align: center;
@@ -61,12 +57,7 @@ nav a {
     text-align: center;
 }
 
-nav a:hover {
-    color: var(--secondary);
-    background-color: var(--dark);
-}
-
-.gallery {
+.body {
     flex: 4;
     background-color: #fff;
     padding: 50px;
@@ -83,6 +74,7 @@ nav a:hover {
     cursor: pointer;
     text-decoration: none;
     font-size: 100%;
+    color: var(--light);
     transition: color 0.1s;
     margin-left: 16px;
 }
