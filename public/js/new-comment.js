@@ -1,7 +1,3 @@
-
-// For this form, we need to subtract post_id by one
-// The reason why is due to the array, post 1 is 0 in the array
-// When a user posts a comment, get that data back from the db
 async function commentFormHandler(event) {
     event.preventDefault();
 
