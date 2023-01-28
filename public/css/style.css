@@ -50,14 +50,16 @@ nav {
     background-color: var(--secondary);
 }
 
-nav a {
+nav a,
+#main-title {
     color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
 }
 
-nav a:hover {
+nav a:hover,
+#main-title {
     color: var(--light);
     text-decoration: none;
 }
@@ -89,6 +91,15 @@ img {
     height: auto;
 }
 
+.comment-text {
+    font-size: 18px;
+}
+
+.comment-date {
+    font-style: italic;
+    font-size: 14px;
+}
+
 /* CARDS */
 .card {
     margin: 20px;
@@ -97,6 +108,10 @@ img {
     border-radius: 10px;
     background-color: var(--light);
     color: var(--dark);
+}
+
+.card-text {
+    font-size: 18px;
 }
 
 .login-card {
