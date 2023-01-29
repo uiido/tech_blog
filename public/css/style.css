@@ -114,7 +114,8 @@ img {
 }
 
 #new-post-btn {
-    margin-left: auto;
+    margin-left: 5px;
+    margin-bottom: 16px;
 }
 
 #new-post-btn:hover {
