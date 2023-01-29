@@ -92,29 +92,28 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     Post.update({
         title: req.body.title,
         content: req.body.content
-    },
-        {
-            where: {
-                id: req.params.id
-            }
-        }).then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'Sorry, no post with this ID was found!' });
-                return;
-            }
-            res.json(dbPostData);
-        })
+    }, {
+        where: {
+            id: req.params.id
+        }
+    }).then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'Sorry, no posts with this ID were found!' });
+            return;
+        }
+        res.json(dbPostData);
+    })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', async (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
