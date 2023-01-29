@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.render('login');
         });
 });
 
@@ -73,12 +73,12 @@ router.get('/edit/:id', (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.render('login');
         });
-})
+});
 
 router.get('/new', (req, res) => {
-    res.render('new-post');
+    res.render('new-post', { loggedIn: true });
 });
 
 module.exports = router;
