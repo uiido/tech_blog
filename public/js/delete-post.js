@@ -1,4 +1,3 @@
-// same idea, delete form instead of update, add, or login, etc.
 async function deleteFormHandler(event) {
     event.preventDefault();
 

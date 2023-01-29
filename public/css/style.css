@@ -100,6 +100,28 @@ img {
     font-size: 14px;
 }
 
+#new-post-form {
+    align-items: center;
+}
+
+#edit-delete {
+    font-size: 16px;
+}
+
+#edit-delete-btn:hover {
+    background-color: #3d5852;
+    color: #e3e4e3
+}
+
+#new-post-btn {
+    margin-left: auto;
+}
+
+#new-post-btn:hover {
+    background-color: #3d5852;
+    color: #e3e4e3;
+}
+
 /* CARDS */
 .card {
     margin: 20px;

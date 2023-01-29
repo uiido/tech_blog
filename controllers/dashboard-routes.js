@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -38,7 +38,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -62,10 +62,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
         }
         ]
     })
-
         .then(dbPostData => {
             if (!dbPostData) {
-                res.status(404).json({ message: 'Sorry, no post with this ID was found!' });
+                res.status(404).json({ message: 'Sorry, no posts with this ID were found!' });
                 return;
             }
 
@@ -76,10 +75,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-});
+})
 
 router.get('/new', (req, res) => {
-    res.render('add-post');
+    res.render('new-post');
 });
 
 module.exports = router;
