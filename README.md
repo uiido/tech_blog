@@ -19,6 +19,10 @@ This website uses technolgies such as node.js, express, mysql, sequelize, bycrpt
 [Repo](https://github.com/uiido/tech_blog)
 
 ## Visuals
-![HomePage]()
+![HomePage](./assets/homepage.png)
 
-![Posts]()
+![PostsComments](./assets/posts-comments.png)
+
+![Dashboard](./assets/dashboard.png)
+
+![EditDelete](./assets/editposts.png)
