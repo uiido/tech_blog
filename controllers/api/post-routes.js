@@ -4,7 +4,6 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    console.log('======================');
     Post.findAll({
         attributes: ['id',
             'title',
@@ -72,17 +71,25 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {
-    Post.create({
-        title: req.body.title,
-        content: req.body.content,
-        user_id: req.session.user_id
-    })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+router.post('/', async (req, res) => {
+    try {
+        const newPost = await Post.create({
+            title: req.body.title,
+            content: req.body.content,
+            user_id: req.session.user_id,
         });
+
+        req.session.save(() => {
+            req.session.postId = newPost.id;
+            req.session.title = newPost.title;
+            req.session.content = newPost.content;
+            req.session.loggedIn = true;
+
+            res.json(newPost);
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.put('/:id', withAuth, (req, res) => {
