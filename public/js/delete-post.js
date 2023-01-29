@@ -1,14 +1,14 @@
 const deletePost = async function (event) {
     event.preventDefault();
 
-    const titleEl = document.querySelector('#new-post-title');
-    const contentEl = document.querySelector('#new-post-content');
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
 
-    const response = await fetch('/api/posts', {
+    const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
-            title: titleEl.value,
-            content: contentEl.value
+            post_id: id
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -16,11 +16,11 @@ const deletePost = async function (event) {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard/');
         alert('This post has been deleted!');
     } else {
-        alert('Something went wrong, try again later!');
+        alert('Something went wrong! Please try again later.');
     }
 };
 
-document.querySelector('#delete-btn').addEventListener('submit', deletePost);
+document.querySelector('.delete-post-btn').addEventListener('click', deletePost);

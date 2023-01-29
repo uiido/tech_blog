@@ -21,7 +21,7 @@ const editPost = async function (event) {
     if (response.ok) {
         document.location.replace('/dashboard/');
     } else {
-        alert('Something went wrong! Try again later.');
+        alert('Something went wrong! Please try again later.');
     }
 };
 
