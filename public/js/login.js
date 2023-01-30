@@ -1,4 +1,4 @@
-const loginFormHandler = async function(event) {
+const loginFormHandler = async function (event) {
   event.preventDefault();
 
   const usernameEl = document.querySelector('#username-input-login');
@@ -16,7 +16,7 @@ const loginFormHandler = async function(event) {
   if (response.ok) {
     document.location.replace('/');
   } else {
-    alert('Failed to login');
+    alert('Something went wrong!');
   }
 };
 
