@@ -20,6 +20,7 @@ const editPost = async function (event) {
 
     if (response.ok) {
         document.location.replace('/dashboard/');
+        alert('Your post has been updated!');
     } else {
         alert('Something went wrong! Please try again later.');
     }

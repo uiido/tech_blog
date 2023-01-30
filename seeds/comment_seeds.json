@@ -1,16 +1,16 @@
 [
     {
-        "content": "Here's a sample comment!",
+        "comment_text": "Here's a sample comment!",
         "user_id": 2,
         "post_id": 1
     },
     {
-        "content": "Here's a new comment!",
+        "comment_text": "Here's a new comment!",
         "user_id": 1,
         "post_id": 2
     },
     {
-        "content": "Here's a different comment!",
+        "comment_text": "Here's a different comment!",
         "user_id": 2,
         "post_id": 2
     }

@@ -16,7 +16,7 @@ const newPost = async function (event) {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
         alert('Your post has been submitted!');
     } else {
         alert('Something went wrong, try again later!');
