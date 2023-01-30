@@ -19,7 +19,7 @@ const deletePost = async function (event) {
         document.location.replace('/dashboard/');
         alert('Your post has been deleted!');
     } else {
-        alert('Something went wrong! Please try again later. (Keep in mind you cannot delete your only post!)');
+        alert('Something went wrong! Please try again later. (Keep in mind you cannot delete your very first post!)');
     }
 };
 
