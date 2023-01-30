@@ -14,7 +14,7 @@ This website is a tech blog (or any kind of blog the user wishes to repurpose it
 This website uses technolgies such as node.js, express, mysql, sequelize, bycrpt, dotenv, and handlebars.
 
 ## Link
-[Website]()
+[Website](https://calm-tundra-31787.herokuapp.com/)
 
 [Repo](https://github.com/uiido/tech_blog)
 
