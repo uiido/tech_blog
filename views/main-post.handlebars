@@ -4,17 +4,18 @@
 
 {{#if loggedIn}}
 <div class="card">
-    <h3 class="card-header"></h3>
-    <form class="card-body comment-form" id="comment-form">
+    <h3 class="card-header">Add a comment?</h3>
+    <form class="card-body" id="comment-form">
 
-        <label class="form-label">Add Your Comment:</label>
-        <input id="comment-body" name="comment-body" class="form-input" />
+        <label class="form-label">What do you want to say?:</label>
+        <textarea id="comment-body" name="content" class="form-input"></textarea>
 
-        <button id="comment-submit" type="submit" class="btn">Submit</button>
+
+        <button type="submit" class="btn">Submit</button>
     </form>
 </div>
 {{/if}}
 
 {{#if loggedIn}}
-<script src="/js/comment.js"></script>
+<script src="/js/new-comment.js"></script>
 {{/if}}
